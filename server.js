@@ -11,7 +11,10 @@ app.set('view engine', 'handlebars');
 app.use(express.static("public", {'extensions': ['html']}));
 
 app.get('/', function (req, res) {
-    res.render('index');
+    res.render('index', {
+      title: "Michael's profile",
+      subheading: "A modern Website built in Node with Handlebars",
+    });
 });
 
 app.get('/my-cv', function (req, res) {
