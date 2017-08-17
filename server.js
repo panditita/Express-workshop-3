@@ -28,6 +28,26 @@ app.get('/', function (req, res) {
     fs.readFile(filePath, callbackFunction);
 });
 
+app.get('/api/posts', function (req, res) {
+    const filePath = __dirname + '/data/posts.json';
+    
+    var options = {
+      dotfiles: 'deny',
+      headers: {
+          'x-timestamp': Date.now(),
+          'x-sent': true
+      }
+    };
+
+    res.sendFile(filePath, options, function (err) {
+      if (err) {
+        next(err);
+      } else {
+        console.log('Sent:', filePath);
+      }
+    });
+});
+
 app.get('/my-cv', function (req, res) {
     res.render('my-cv');
 });
