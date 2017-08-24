@@ -1,0 +1,6 @@
+{
+    "accessKeyId": "AKIAICDU4C3RWRUR4F6Q",
+    "secretAccessKey": "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",
+    "region": "eu-west-1",
+    "endpoint": "https://dynamodb.eu-west-1.amazonaws.com"
+}
